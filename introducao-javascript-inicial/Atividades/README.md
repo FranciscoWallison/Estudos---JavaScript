@@ -85,7 +85,7 @@ Podemos buscar este ```<h1>``` passando o seletor CSS correto para a função qu
 document.querySelector("h1");
 E utilizando um seletor CSS de classe, ficaria assim:
 
-document.querySelector(".titulo");
+```document.querySelector(".titulo");```
 Neste caso, ambas as funções retornaria o h1. Ter domínio dos seletores CSS é importante se você deseja trabalhar bem com o Javascript!
 
 ***
