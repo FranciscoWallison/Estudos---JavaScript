@@ -75,3 +75,17 @@ Por isso, quando dizemos que com o Javascript nos estamos manipulando o DOM, est
 Outra caracteristica interessante, é que como manipulamos o DOM , quando trocamos um texto de um ``` <h1> ```ou um estilo de um elemento, na verdade estamos alterando a representação em memória , o que faz com que o arquivo fonte que contêm seu HTML fique intacto!
 
 ***
+:mortar_board:  ##Sabemos que o document contêm a representação de todo o HTML da nossa página, porém na maioria dos casos estamos interessados em apenas uma parte do HTML e não em ele todo. Qual função podemos utilizar na variável document para especificar que queremos trazer apenas uma parte do HTML ?
+######document.querySelector();:white_check_mark:
+
+Quando desejamos pegar apenas parte do HTML, devemos utilizar a função querySelector(). A função querySelector faz a busca através de seletores CSS para trazer o HTML que você está interessado. Por exemplo, no caso abaixo:
+```<h1 class="titulo"> ```Meu primeiro site```</h1>```
+Podemos buscar este ```<h1>``` passando o seletor CSS correto para a função querySelector. Utilizando o setor de tag, podemos buscar assim:
+
+document.querySelector("h1");
+E utilizando um seletor CSS de classe, ficaria assim:
+
+document.querySelector(".titulo");
+Neste caso, ambas as funções retornaria o h1. Ter domínio dos seletores CSS é importante se você deseja trabalhar bem com o Javascript!
+
+***
