@@ -1,4 +1,4 @@
-##Sabemos que o navegador entende apenas HTML e que se colocarmos scripts diretamente no corpo da mensagem ele será interpretado como texto. Como resolvemos isso?
+:mortar_board: ##Sabemos que o navegador entende apenas HTML e que se colocarmos scripts diretamente no corpo da mensagem ele será interpretado como texto. Como resolvemos isso?
 A tag ``` <script> ``` é responsável por nos ajudar a resolver este problema. Tudo que declaramos dentro da tag ``` <script>  ``` é interpretado como Javascript quando o navegador passar por ali.
 No caso abaixo:
 ```
@@ -9,7 +9,7 @@ alert("Olá mundo");
 Quando o navegador passar pela tag abaixo ele vai interprar o texto "alert("Olá mundo");" e irá executar a função alert(), que é responsável por exibir uma pop up com a mensagem Olá mundo.
 
 ***
-##Ao abrir o HTML abaixo em um navegador, o que irá acontecer ? 
+:mortar_board: ##Ao abrir o HTML abaixo em um navegador, o que irá acontecer ? 
 ```
 <html>
     <head>
@@ -31,7 +31,7 @@ Saber identificar e interpretar os erros do console é uma habilidade de todo bo
 Se desejamos que uma mensagem seja exibida no console, devemos sempre chamar a função ```console.log()```, que é a função que recebe como parâmetro o contéudo da mensagem que queremos exibir no console.
 
 ***
-##Marque as alternativas abaixo que contêm características ou funcionalidades do console de desenvolvedor do navegador:
+:mortar_board: ##Marque as alternativas abaixo que contêm características ou funcionalidades do console de desenvolvedor do navegador:
 ######Executar funções Javascript diretamente no console. :white_check_mark:
 ######Exibir erros de códigos Javascript carregados pelo navegador. :white_check_mark:
 ######Pode ser aberto com a tecla de atalho CTRL + SHIFT + J no Windows/Linux e CMD + ALT + J no Mac, :white_check_mark:
@@ -44,10 +44,22 @@ O console do desenvolvedor é uma ferramenta muito poderosa e versátil para o d
 Como utilizar o console é algo bastante corriqueiro, podemos nos aproveitar dos atalhos CTRL + SHIFT + J ( Win/Linux) ou CMD + ALT + J (Mac) para ter acesso ao console de modo rápido.
 ```
 ***
-##Qual código abaixo importa corretamente um arquivo .js chamado contador.js que se encontra na mesma pasta de nosso arquivo HTML?
-Sabemos que é importante fazer a separação de mundos HTML e Javascript, por isso criamos arquivos externos para guardar nosso código. Só que ao separar o Javascript em um arquivo externo, precisamos lembrar de importa-lo no HTML e para isso precisamos utilizar a tag ``` <script> ``` assim:
+:mortar_board: ##Qual código abaixo importa corretamente um arquivo .js chamado contador.js que se encontra na mesma pasta de nosso arquivo HTML?
+Sabemos que é importante fazer a separação de mundos HTML e Javascript, por isso criamos arquivos externos para guardar nosso código. Só que ao separar o Javascript em um arquivo externo, precisamos lembrar de importa-lo no HTML e para isso precisamos utilizar a tag ``` <script> ``` assim: 
 ```
-<script src="contador.js"></script> :white_check_mark:
+<script src="contador.js"></script>
 ```
 
 ***
+:mortar_board: ##Qual opção abaixo substitui o hasheado (XXXX) por um código que exibe uma pop up com a mensagem bem vindo ?
+```
+XXXX mensagem = "Seja bem vindo ao meu site!"
+
+XXXX(mensagem);
+```
+######var e alert respectivamente. :white_check_mark:
+
+Queremos declarar a variável mensagem, por isso devemos utilizar a palavra var para criar esta entidade:
+``` var mensagem = "Seja bem vindo ao meu site!" ```
+e logo em seguida desejamos exibir uma pop-up, logo é necessário utilizar a função alert que é responsável por isso:
+``` alert(mensagem); ```
