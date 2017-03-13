@@ -29,3 +29,18 @@ Porém, ao ler a tag ``` <script> ``` o navegador entende que todo texto que est
 Saber identificar e interpretar os erros do console é uma habilidade de todo bom desenvolvedor Javascript, então é bom começarmos a praticá-la desde já.
 
 Se desejamos que uma mensagem seja exibida no console, devemos sempre chamar a função ```console.log()```, que é a função que recebe como parâmetro o contéudo da mensagem que queremos exibir no console.
+
+-------------------------------------------------------------------------------------------------------------------------------
+##Marque as alternativas abaixo que contêm características ou funcionalidades do console de desenvolvedor do navegador:
+######Executar funções Javascript diretamente no console.
+######Exibir erros de códigos Javascript carregados pelo navegador.
+######Pode ser aberto com a tecla de atalho CTRL + SHIFT + J no Windows/Linux e CMD + ALT + J no Mac,
+######Ver os resultados de funções que imprimem no console, como a console.log().
+```
+O console do desenvolvedor é uma ferramenta muito poderosa e versátil para o desenvolvedor Javascript. Com ele conseguimos rapidamente ser notificados de possíveis erros em nosso código, podemos executar funções, observar a saída de algumas funções e executar pequenos testes das funcionalidades do Javascript de modo rápido.
+
+É uma boa prática sempre que estivermos testando nosso site ficar com o console aberto, para ficar monitorando possíveis erros em nosso código.
+
+Como utilizar o console é algo bastante corriqueiro, podemos nos aproveitar dos atalhos CTRL + SHIFT + J ( Win/Linux) ou CMD + ALT + J (Mac) para ter acesso ao console de modo rápido.
+```
+-------------------------------------------------------------------------------------------------------------------------------
