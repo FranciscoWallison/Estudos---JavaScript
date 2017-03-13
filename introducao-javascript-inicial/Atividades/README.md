@@ -85,7 +85,45 @@ Podemos buscar este ```<h1>``` passando o seletor CSS correto para a função qu
 document.querySelector("h1");
 E utilizando um seletor CSS de classe, ficaria assim:
 
-```document.querySelector(".titulo");```
+``` document.querySelector(".titulo"); ```
 Neste caso, ambas as funções retornaria o h1. Ter domínio dos seletores CSS é importante se você deseja trabalhar bem com o Javascript!
+
+***
+:mortar_board:  ##Temos o seguinte fragmento HTML:
+```
+
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Peso(kg)</th>
+            <th>Altura(m)</th>
+            <th>Gordura Corporal(%)</th>
+            <th>IMC</th>
+        </tr>
+    </thead>
+    <tbody id="tabela-pacientes">
+        <tr class="paciente" id="primeiro-paciente">
+            <td class="info-nome">Paulo</td>
+            <td class="info-peso">100</td>
+            <td class="info-altura">2.00</td>
+            <td class="info-gordura">10</td>
+            <td class="info-imc">0</td>
+        </tr>
+    </tbody>
+</table>
+
+```
+
+Em seguida, temos o código que busca a tr que guarda os dados de um paciente. Usaremos um seletor de ID para a função document.querySelector:
+```
+var trPaciente = document.querySelector('#primeiro-paciente');
+```
+
+Qual das opções abaixo acessa corretamente a partir de trPaciente o peso e a altura?
+######var tdPeso = trPaciente.querySelector('.info-peso');:white_check_mark:
+######var tdAltura = trPaciente.querySelector('.info-altura');:white_check_mark:
+
+Com JavaScript podemos obter um elemento pai, no caso trPaciente e dele realizar novas consultas para obter elementos filhos, como foi o caso das TD's de peso e altura.
 
 ***
