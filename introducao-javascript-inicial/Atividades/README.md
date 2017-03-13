@@ -57,9 +57,21 @@ XXXX mensagem = "Seja bem vindo ao meu site!"
 
 XXXX(mensagem);
 ```
-######var e alert respectivamente. :white_check_mark:
+###### ```var``` e ```alert``` respectivamente. :white_check_mark:
 
 Queremos declarar a variável mensagem, por isso devemos utilizar a palavra var para criar esta entidade:
 ``` var mensagem = "Seja bem vindo ao meu site!" ```
 e logo em seguida desejamos exibir uma pop-up, logo é necessário utilizar a função alert que é responsável por isso:
 ``` alert(mensagem); ```
+
+***
+:mortar_board: ##O que contêm a variável ```document``` do Javacript ?
+######Ela é a representação do DOM ou Document Object Model, que é a representação da nossa página HTML para o navegador, que é utilizada pelo Javascript para manipular a página.:white_check_mark:
+O document é uma variável muito importante do Javascript. Ela contêm o DOM ou Document Object Model, que é como o navegador enxerga o HTML utilizado por ele para renderizar a página.
+O navegador, ao ler o seu arquivo HTML, cria uma cópia em memória daquele HTML e a partir dessa cópia ele vai desenhando a sua página, colocando as tags e aplicando os estilos. Esta cópia é o que chamamos de DOM uma representação em memória do HTML do seu arquivo, que o navegador usa para desenhar a página, e a variável document é quem contêm o DOM.
+
+Por isso, quando dizemos que com o Javascript nos estamos manipulando o DOM, estamos manipulando o que o navegador renderizou. Então ao trocar algum texto do DOM, o navegador imediatamente desenha novamente aquele texto, pois o DOM é o que o navegador usa para desenhar o seu site.
+
+Outra caracteristica interessante, é que como manipulamos o DOM , quando trocamos um texto de um <h1> ou um estilo de um elemento, na verdade estamos alterando a representação em memória , o que faz com que o arquivo fonte que contêm seu HTML fique intacto!
+
+***
