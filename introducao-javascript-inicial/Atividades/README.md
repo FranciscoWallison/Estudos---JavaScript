@@ -127,3 +127,66 @@ Qual das opções abaixo acessa corretamente a partir de trPaciente o peso e a a
 Com JavaScript podemos obter um elemento pai, no caso trPaciente e dele realizar novas consultas para obter elementos filhos, como foi o caso das TD's de peso e altura.
 
 ***
+:mortar_board:  ##Mariana é dona de um restaurante que troca os pratos semanalmente. Os pratos são exibidos para seus clientes em seu site como uma tabela, como a abaixo:
+```
+<table>
+<thead>
+    <th>Salada</th>
+    <th>Prato Principal</th>
+    <th>Acompanhamento</th>
+<thead>
+<tbody>
+    <tr class="prato-do-dia" id="segunda">
+        <td class='salada'>Alface e Tomate</td>
+        <td class='principal'>Frango Grelhado</td>
+        <td class='acompanhamento'>Arroz e Feijão preto</td>        
+    </tr>
+    ...Outros dias da semana
+    <tr class="prato-do-dia" id="sexta">
+        <td class='salada'>Salada de Batata</td>
+        <td class='principal'>Macarrão com molho branco</td>
+        <td class='acompanhamento'>Milho, ervilha e brócolis</td>        
+    </tr>
+</tbody>
+```
+Se Mariana deseja exibir o prato de cada dia em uma outra área de sua página, da forma abaixo:
+```
+Prato do dia!
+Alface e Tomate
+Frango Grelhado
+Arroz e Feijão Preto
+```
+Qual código abaixo extrai as informações de um dia da tabela, por exemplo a sexta-feira, e imprime no console no formato que Mariana deseja?
+
+```
+var pratoDoDia = document.querySelector("#sexta");
+var salada = pratoDoDia.querySelector(".salada").textContent;
+var principal = pratoDoDia.querySelector(".principal").textContent;
+var acompanhamento = pratoDoDia.querySelector(".acompanhamento").textContent;
+
+console.log("Prato do dia!");
+console.log(salada);
+console.log(principal);
+console.log(acompanhamento);
+```
+
+A melhor estratégia neste caso, como queremos buscar os pratos de um dia específico é primeiro buscar a ```<tr>``` que contêm os pratos deste dia, fazendo o uso da função ```document.querySelector```:
+``` var pratoDoDia = document.querySelector("#sexta"); ```
+
+Em seguida, vamos buscar dentro desta ``` <tr> ```  por os pratos específicos, então vamos utilizar a função querySelector na própria ``` <tr> ``` , afinal a função ``` querySelector() ```  é especialista em buscar, seja na página inteira quando utilizamos-a buscando no document (document.querySelector) ou quando queremos fazer uma busca em elemento específico que foi pré selecionado , como é o caso agora:
+
+```
+var salada = pratoDoDia.querySelector(".salada").textContent;
+var principal = pratoDoDia.querySelector(".principal").textContent;
+var acompanhamento = pratoDoDia.querySelector(".acompanhamento").textContent;
+```
+Já aproveitamos e imendamos na função seletora a propriedade textContent , afinal estamos interessados é no nome do prato que está escrito dentro da tag html, e não na tag em si!
+
+Em seguida, basta apenas imprimirmos como foi solicitado:
+
+```
+console.log("Prato do dia!");
+console.log(salada);
+console.log(principal);
+console.log(acompanhamento);
+```
