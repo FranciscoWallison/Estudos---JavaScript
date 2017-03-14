@@ -167,8 +167,9 @@ var acompanhamento = pratoDoDia.querySelector(".acompanhamento").textContent;
 console.log("Prato do dia!");
 console.log(salada);
 console.log(principal);
-console.log(acompanhamento);
+console.log(acompanhamento); 
 ```
+:white_check_mark:
 
 A melhor estratégia neste caso, como queremos buscar os pratos de um dia específico é primeiro buscar a ```<tr>``` que contêm os pratos deste dia, fazendo o uso da função ```document.querySelector```:
 ``` var pratoDoDia = document.querySelector("#sexta"); ```
@@ -190,3 +191,24 @@ console.log(salada);
 console.log(principal);
 console.log(acompanhamento);
 ```
+
+***
+:mortar_board:  ##Aprendemos que o cálculo do índice de massa corporal (IMC) é feito dividindo o nosso peso pela altura vezes a altura, o que pode ser representado pela seguinte fórmula na linguagem JavaScript:
+
+```
+alert(78 / (1.71 * 1.71));
+```
+
+No entanto, para melhoramos a legibilidade e manutenção deste código, podemos utilizar variáveis.
+
+Quais opções abaixo possuem o mesmo resultado da instrução anterior com o auxílio de variáveis?
+```
+var peso = 78;
+var altura = 1.71;
+var imc = peso / (altura * altura);
+alert(imc);
+
+```
+Veja que uma simples instrução quando desmembrada em variáveis necessita da atenção do desenvolvedor.
+
+**
