@@ -326,7 +326,8 @@ if(pesoEhValido && alturaEhValida) {
 
 Apesar do código acima ser funcional, em nenhum momento ele esta exibindo o IMC calculado na página, muito menos as mensagens de erro caso peso ou altura sejam inválidos. Qual das opções abaixo exibe o IMC , inclusive as mensagens de erro?
 
-```
+``` 
+
 if(peso <=0 || peso >= 1000) {
    pesoEhValido = false;
    tdPeso.textContent = 'peso inválido';
