@@ -341,6 +341,6 @@ if(pesoEhValido && alturaEhValida) {
    var imc = peso / ( altura * altura);
    tdImc.textContent = imc; 
 }
-```:white_check_mark:
+``` :white_check_mark:
 
 Veja que já somos capazes de capturar informações na página e ainda executar um monte de críticas para verificar a integridade dos dados antes de executamos nossa lógica com eles.
