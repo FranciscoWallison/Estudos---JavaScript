@@ -407,3 +407,63 @@ if(setorTI == true && gerente == true){
     console.log("Acesso negado")
 }
 ```
+
+***
+# Buscando os dados do primeiro paciente
+Neste capítulo vamos calcular o IMC do primeiro paciente , buscando os seus dados de altura e peso, fazendo as validações necessárias e em seguida vamos preencher o IMC na tabela.
+
+Em seu arquivo ```principal.js```, vá executando o passo a passo abaixo:
+
+1- Vamos primeiro selecionar o primeiro paciente, que é uma ```<tr>``` com a nossa conhecida função ```document.querySelector()``` e salvar na variável paciente. Vamos usar o seletor de ```#id```:
+
+```
+var paciente = document.querySelector("#primeiro-paciente");
+```
+
+2- Agora com o paciente em mãos, podemos buscar dentro dele as informações que precisamos que são a altura e o peso da paciente. Vamos utilizar a função ```querySelector()``` desta vez para buscar dentro da váriavel paciente, pelo ```<td>``` que contêm a altura e o peso:
+
+```
+var tdPeso = paciente.querySelector(".info-peso");
+var tdAltura = paciente.querySelector(".info-altura");
+```
+
+3- Mas sabemos que não estamos interessados nos ```<td>``` e sim no conteudo de texto de cada um deles, então vamos extraí-los:
+
+```
+var tdPeso = paciente.querySelector(".info-peso");
+var tdAltura = paciente.querySelector(".info-altura");
+
+var peso = tdPeso.textContent;
+var altura = tdAltura.textContent;
+```
+4- Com os valores de peso e altura em mãos, podemos calcular o IMC. Não vamos nos esquecer dos parênteses também para que nossa conta seja feita como esperamos:
+
+```
+var imc = peso / (altura * altura);
+```
+
+5- Por último, com o IMC calculado devemos preencher a coluna de IMC do paciente selecionado com novo valor calculado. Vamos primeiro pegar o ```<td>``` que irá guardar o IMC:
+
+```
+var tdImc = paciente.querySelector(".info-imc");
+```
+
+6- Agora vamos colocar o valor calculado dentro do tdImc:
+
+```
+tdImc.textContent = imc;
+```
+Seu código deve estar assim:
+```
+var tdPeso = paciente.querySelector(".info-peso");
+var tdAltura = paciente.querySelector(".info-altura");
+
+var peso = tdPeso.textContent;
+var altura = tdAltura.textContent;
+
+var imc = peso / (altura * altura);
+var tdImc = paciente.querySelector(".info-imc");
+tdImc.textContent = imc;
+```
+Agora, ao recarregar a página, você verá que o IMC do primeiro paciente.
+
