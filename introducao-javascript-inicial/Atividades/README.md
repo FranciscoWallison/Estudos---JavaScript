@@ -372,3 +372,38 @@ A primeira condição era ``` setorTI == true```  ou seja , se o funcionário fo
 A segunda condição era ``` gerente == true```  ou seja, se o funcionário fosse um gerente ele já ganharia o acesso, mesmo que não fosse do setor de TI.
 
 No próximo exercício faremos a correção deste código para que ele dê acesso apenas aos gerentes do setor de TI.
+
+***
+:mortar_board:  ##Vimos que o banco Finanção está com uma falha na hora de verificar quem tem acesso a quais informações , qual alteração você faria no código abaixo para que apenas gerentes que são do departamento de TI tenham acesso ao dados de seus funcionários ?
+``` 
+var setorTI = true;
+var gerente = false;
+if(setorTI == true || gerente == true){
+    console.log("Acesso permitido");
+}else{
+    console.log("Acesso negado")
+}
+``` 
+:white_check_mark:
+``` 
+var setorTI = true;
+var gerente = false;
+if(setorTI == true && gerente == true){
+    console.log("Acesso permitido");
+}else{
+    console.log("Acesso negado")
+}
+```
+
+Basta apenas trocar a condição lógica de OU (||) para E (&&) assim , só quem vai ter o acesso permitido são as pessoas que são do setor de TI E também são gerentes.
+Logo, o código final :
+
+```
+var setorTI = true;
+var gerente = false;
+if(setorTI == true && gerente == true){
+    console.log("Acesso permitido");
+}else{
+    console.log("Acesso negado")
+}
+```
