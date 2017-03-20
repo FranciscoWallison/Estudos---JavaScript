@@ -347,3 +347,28 @@ if(pesoEhValido && alturaEhValida) {
 :white_check_mark:
 
 Veja que já somos capazes de capturar informações na página e ainda executar um monte de críticas para verificar a integridade dos dados antes de executamos nossa lógica com eles.
+
+***
+:mortar_board:  ##No sistema de RH do banco Finanção, as informações dos funcionários de uma determinada área eram apenas acessíveis aos gerentes daquela área Um código Javascript que verificava se um funcionário do setor de TI poderia ou não ter acesso aos dados funcionava como abaixo:
+``` 
+var setorTI = true;
+var gerente = false;
+if(setorTI == true || gerente == true){
+    console.log("Acesso permitido");
+}else{
+    console.log("Acesso negado")
+}
+``` 
+Com o tempo os funcionários observaram que a validação estava falha, pois pessoas que não deveriam ter acesso aos dados do setor TI estavam conseguindo mesmo assim.
+
+Com base nos seus conhecimentos de Javascript e de lógica de programação, marque todas as opções abaixo que indicam quais funcionários tinham acesso as informações do setor de TI.
+
+######Todos os funcionários do setor de TI.:white_check_mark:
+######Qualquer funcionário que fosse gerente no banco. :white_check_mark:
+
+Como a condição lógica testada é um OU ( representado pelas barrinhas || no Javascript ), caso uma condição OU a outra fosse atendida, o acesso as informações seriam liberadas. Basta apenas cumprir uma delas que o acesso seria permitido.
+A primeira condição era ``` setorTI == true```  ou seja , se o funcionário fosse do setor de TI ele já teria o acesso, mesmo não sendo gerente.
+
+A segunda condição era ``` gerente == true```  ou seja, se o funcionário fosse um gerente ele já ganharia o acesso, mesmo que não fosse do setor de TI.
+
+No próximo exercício faremos a correção deste código para que ele dê acesso apenas aos gerentes do setor de TI.
