@@ -467,3 +467,100 @@ tdImc.textContent = imc;
 ```
 Agora, ao recarregar a página, você verá que o IMC do primeiro paciente.
 
+***
+:mortar_board:  ##Já estamos conseguindo calcular o IMC, porém falta validar os dados que vem da tabela. Vamos lá:
+1- O primeiro passo é fazer uma verificação do peso, vamos estabelecer que um peso é inválido se ele for menor ou igual a 0 quilos **OU** maior que 1000 quilos. Para isto, vamos utilizar um if para checar o peso, e a condição lógica de **OU** (||):
+```
+if(peso <= 0 || peso > 1000){
+    console.log("Peso inválido");
+}
+```
+
+2- Não basta apenas exibir no console a validação. Vamos escrever na coluna do IMC também o erro de peso inválido:
+```
+if(peso <= 0 || peso > 1000){
+    console.log("Peso inválido");
+    tdImc.textContent = "Peso inválido!";
+}
+```
+3- Vamos repetir a mesma lógica para a altura, só que considerando inválido uma altura menor ou igual a 0 metros ou maior ou igual a 3 metros.
+```
+if(altura <= 0 || altura >= 3){
+    console.log("Altura inválida");
+    tdImc.textContent = "Altura inválida!";
+}
+```
+
+4- Agora não basta verificar se a altura ou o peso estão errados, só devemos calcular o IMC se ambos passarem na validação. Para isto, vamos criar duas variáveis, **pesoEhValido** e **alturaEhValida**, iniciar seus valores como **true**. Caso as validações falhem , trocaremos este valor para **false:**
+```
+var alturaEhValida = true;
+var pesoEhValido = true;
+
+if(peso <= 0 || peso > 1000){
+    console.log("Peso inválido");
+    tdImc.textContent = "Peso inválido!";
+    pesoEhValido = false;
+}
+
+if(altura <= 0 || altura >= 1000){
+    console.log("Altura inválida");
+
+    tdImc.textContent = "Altura inválida!";
+    alturaEhValida = false;
+}
+```
+
+5- Agora vamos fazer um lógica para apenas calcular o IMC se o peso **E** a altura forem válidos. Vamos utilizar o operador lógico de **E** (&&):
+```
+var alturaEhValida = true;
+var pesoEhValido = true;
+
+if(peso <= 0 || peso > 1000){
+    console.log("Peso inválido");
+    tdImc.textContent = "Peso inválido!";
+    pesoEhValido = false;
+}
+
+if(altura <= 0 || altura >= 1000){
+    console.log("Altura inválida");
+    tdImc.textContent = "Altura inválida!";
+    alturaEhValida = false;
+}
+
+if(pesoEhValido && alturaEhValida){
+    var imc = peso / ( altura * altura);    
+    tdImc.textContent = imc;
+}
+```
+
+O seu código final deve estar assim:
+
+```
+var tdPeso = paciente.querySelector(".info-peso");
+var tdAltura = paciente.querySelector(".info-altura");
+
+var tdImc = paciente.querySelector(".info-imc");
+
+var peso = tdPeso.textContent;
+var altura = tdAltura.textContent;
+
+var alturaEhValida = true;
+var pesoEhValido = true;
+
+if(peso <= 0 || peso > 1000){
+    console.log("Peso inválido");
+    tdImc.textContent = "Peso inválido!";
+    pesoEhValido = false;
+}
+
+if(altura <= 0 || altura >= 1000){
+    console.log("Altura inválida");
+    tdImc.textContent = "Altura inválida!";
+    alturaEhValida = false;
+}false;
+
+if(pesoEhValido && alturaEhValida){
+    var imc = peso / ( altura * altura);    
+    tdImc.textContent = imc;
+}
+```
