@@ -1,12 +1,14 @@
 var titulo = document.querySelector(".titulo");
 titulo.textContent = "Aparecida Nutricionista";
 
+// Se estamos interessados em buscar vários elementos que possuem a mesma classe
 var pacientes = document.querySelectorAll(".paciente");
 
 for (var i = 0; i < pacientes.length ; i++) {
 	//ATRIBUINDO VALORES
 	var paciente = pacientes[i] ;
-
+	
+	//querySelector nos retorna apenas um elemento
 	var tdPeso = paciente.querySelector(".info-peso");
 	var peso = tdPeso.textContent;
 
