@@ -598,3 +598,51 @@ A função ```toFixed()``` deve ser usadas em números, logo se queremos transfo
 porcentagemCategoria.toFixed(1);
 ```
 O número passado entre parêntenses deve ser o número de casas decimais para formatar o ```porcentagemCategoria```.
+
+***
+:mortar_board:  ##João está montando um script em Javascript que deve pegar todos os nomes dos produtos de um e-commerce.
+
+O HTML da lista é como o abaixo:
+
+```
+<ul class="lista-produtos">
+    <li class="produto">Web cam</li>
+    <li class="produto">Microfone</li>
+    <li class="produto">Fundo verde</li>
+    <li class="produto">Notebook</li>
+</ul>
+```
+
+E o script do João é o seguinte:
+```
+var produtos = document.querySelector("produto");
+
+for( var i=0 ; i < produtos.length ; i++){
+    var produto = produtos[i];
+    var nomeDoProduto = produto.textContent;
+    console.log(nomeDoProduto);
+}
+```
+
+:white_check_mark:
+######
+
+
+**João está utilizando a função errada, como ele quer selecionar diversos elementos, ele deve usar a função ```querySelectorAll()```**.
+
+**João esqueceu de colocar o ```.nomeClass``` no seletor de sua função querySelector()**.
+
+João cometeu dois erros ao querer selecionar todos os produtos da lista.
+O primeiro foi o uso da função de seleção errada, afinal se ele queria selecionar todos os ```produtos``` ele deveria utilizar a função ```querySelectorAll()```, que retornar um array com todo mundo que atende critério de seleção.
+
+O segundo erro foi no parâmetro da função seletora, se ele deseja buscar por todos os produtos que tem **classe** produto, ele deve utilizar o seletor de **classe** que é **```ponto```**.
+
+```
+var produtos = document.querySelectorAll(".produto");
+
+for( var i=0 ; i < produtos.length ; i++){
+    var produto = produtos[i];
+    var nomeDoProduto = produto.textContent;
+    console.log(nomeDoProduto);
+}
+```
