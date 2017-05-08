@@ -502,7 +502,7 @@ if(peso <= 0 || peso > 1000){
     pesoEhValido = false;
 }
 
-if(altura <= 0 || altura >= 1000){
+if(altura <= 0 || altura >= 3){
     console.log("Altura inválida");
 
     tdImc.textContent = "Altura inválida!";
@@ -521,7 +521,7 @@ if(peso <= 0 || peso > 1000){
     pesoEhValido = false;
 }
 
-if(altura <= 0 || altura >= 1000){
+if(altura <= 0 || altura >= 3){
     console.log("Altura inválida");
     tdImc.textContent = "Altura inválida!";
     alturaEhValida = false;
@@ -553,11 +553,11 @@ if(peso <= 0 || peso > 1000){
     pesoEhValido = false;
 }
 
-if(altura <= 0 || altura >= 1000){
+if(altura <= 0 || altura >= 3){
     console.log("Altura inválida");
     tdImc.textContent = "Altura inválida!";
     alturaEhValida = false;
-}false;
+}
 
 if(pesoEhValido && alturaEhValida){
     var imc = peso / ( altura * altura);    
