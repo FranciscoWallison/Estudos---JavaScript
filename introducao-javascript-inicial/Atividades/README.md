@@ -680,3 +680,36 @@ O interessante é que podemos colocar como valor, qualquer valor que seria váli
 paragrafo.style.color = "rgb(0,0,255)";
 ```
 Ambos os códigos obtêm o mesmo resultado!
+
+***
+:white_check_mark:
+######
+E se mudarmos de ideia e ao ao invés da **cor** do parágrafo do último exercício ser azul, quisermos deixar o **fundo** dele azul ?
+
+```
+<p id="latim"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+
+<script>
+    var paragrafo = document.querySelector("#latim");
+    // Código aqui!
+</script>
+```
+:white_check_mark:
+```
+paragrafo.style.backgroundColor = "blue";
+```
+Já vimos que para alterar um estilo de um elemento devemos acessar a propriedade ```style``` em seguida o 
+estilo que queremos modificar. Porém , quando o nome do estilo possuí 
+duas palavras no CSS, como é o caso de ```background-color```, devemos representá-lo com o 
+estilo camelCase, que é a primeira palavra em mínusulo e a letra inicial de cada palavra seguinte em 
+maiúsculo, transformando ```background-color``` em **```backgroundColor```**.
+Ou seja, para alterar a cor de fundo do parágrafo para azul, devemos utilizar o seguinte código abaixo:
+```
+<script>
+    var paragrafo = document.querySelector("#latim");
+    paragrafo.style.backgroundColor = "blue";
+</script>
+```
+Isto é válido para qualquer propriedade do CSS que tenha duas palavras, 
+como background-color, font-size, font-style, border-radius...etc!
