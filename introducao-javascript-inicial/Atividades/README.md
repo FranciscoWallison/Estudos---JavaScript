@@ -581,7 +581,7 @@ console.log(porcentagemCategoria);
 Jéssica viu que ela não tinha interesse em saber a porcentagem com tantas casa decimais , como neste exemplo que iria ficar um número muito feio (24.49240607513989). Para o caso dela, **uma** casa decimal seria o suficiente.
 
 Qual alteração no código dela faria com que o número de casas decimais ficasse limitado a uma casa decimal ?
-
+***
 :white_check_mark:
 ######
 ```
@@ -598,3 +598,118 @@ A função ```toFixed()``` deve ser usadas em números, logo se queremos transfo
 porcentagemCategoria.toFixed(1);
 ```
 O número passado entre parêntenses deve ser o número de casas decimais para formatar o ```porcentagemCategoria```.
+
+***
+:mortar_board:  ##João está montando um script em Javascript que deve pegar todos os nomes dos produtos de um e-commerce.
+
+O HTML da lista é como o abaixo:
+
+```
+<ul class="lista-produtos">
+    <li class="produto">Web cam</li>
+    <li class="produto">Microfone</li>
+    <li class="produto">Fundo verde</li>
+    <li class="produto">Notebook</li>
+</ul>
+```
+
+E o script do João é o seguinte:
+```
+var produtos = document.querySelector("produto");
+
+for( var i=0 ; i < produtos.length ; i++){
+    var produto = produtos[i];
+    var nomeDoProduto = produto.textContent;
+    console.log(nomeDoProduto);
+}
+```
+***
+:white_check_mark:
+######
+
+
+**João está utilizando a função errada, como ele quer selecionar diversos elementos, ele deve usar a função ```querySelectorAll()```**.
+
+**João esqueceu de colocar o ```.nomeClass``` no seletor de sua função querySelector()**.
+
+João cometeu dois erros ao querer selecionar todos os produtos da lista.
+O primeiro foi o uso da função de seleção errada, afinal se ele queria selecionar todos os ```produtos``` ele deveria utilizar a função ```querySelectorAll()```, que retornar um array com todo mundo que atende critério de seleção.
+
+O segundo erro foi no parâmetro da função seletora, se ele deseja buscar por todos os produtos que tem **classe** produto, ele deve utilizar o seletor de **classe** que é **```ponto```**.
+
+```
+var produtos = document.querySelectorAll(".produto");
+
+for( var i=0 ; i < produtos.length ; i++){
+    var produto = produtos[i];
+    var nomeDoProduto = produto.textContent;
+    console.log(nomeDoProduto);
+}
+```
+
+***
+:white_check_mark:
+######
+Qual dos códigos abaixo altera a cor da letra do paragrafo abaixo para a cor azul ?
+
+```
+<p id="latim"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+
+<script>
+    var paragrafo = document.querySelector("#latim");
+    // Código aqui!
+</script>
+```
+
+:white_check_mark:
+```
+paragrafo.style.color = "blue";
+```
+
+Se queremos modificar um **estilo** de um elemento selecionado com o Javascript, devemos primeiro acessar a propriedade **style** , que contêm todos os estilos daquele elemento. Depois que temos a propriedade **.style** em mãos, devemos especificar qual estilo desejamos alterar , que neste caso é a cor do texto ou seja o estilo **color**.
+```
+paragrafo.style.color;
+```
+Só que não basta pegar o estilo, devemos atribuir a ele um novo valor, como neste caso desejamos alterar para a cor azul, vamos colocá-lo com valor de **blue:
+```
+paragrafo.style.color = "blue";
+```
+O interessante é que podemos colocar como valor, qualquer valor que seria válido no CSS, então se quiséssemos poderíamos utilizar o código RGB para representar a cor:
+```
+paragrafo.style.color = "rgb(0,0,255)";
+```
+Ambos os códigos obtêm o mesmo resultado!
+
+***
+:white_check_mark:
+######
+E se mudarmos de ideia e ao ao invés da **cor** do parágrafo do último exercício ser azul, quisermos deixar o **fundo** dele azul ?
+
+```
+<p id="latim"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+
+<script>
+    var paragrafo = document.querySelector("#latim");
+    // Código aqui!
+</script>
+```
+:white_check_mark:
+```
+paragrafo.style.backgroundColor = "blue";
+```
+Já vimos que para alterar um estilo de um elemento devemos acessar a propriedade ```style``` em seguida o 
+estilo que queremos modificar. Porém , quando o nome do estilo possuí 
+duas palavras no CSS, como é o caso de ```background-color```, devemos representá-lo com o 
+estilo camelCase, que é a primeira palavra em mínusulo e a letra inicial de cada palavra seguinte em 
+maiúsculo, transformando ```background-color``` em **```backgroundColor```**.
+Ou seja, para alterar a cor de fundo do parágrafo para azul, devemos utilizar o seguinte código abaixo:
+```
+<script>
+    var paragrafo = document.querySelector("#latim");
+    paragrafo.style.backgroundColor = "blue";
+</script>
+```
+Isto é válido para qualquer propriedade do CSS que tenha duas palavras, 
+como background-color, font-size, font-style, border-radius...etc!
