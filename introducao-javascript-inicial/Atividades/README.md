@@ -713,3 +713,29 @@ Ou seja, para alterar a cor de fundo do parágrafo para azul, devemos utilizar o
 ```
 Isto é válido para qualquer propriedade do CSS que tenha duas palavras, 
 como background-color, font-size, font-style, border-radius...etc!
+
+***
+:white_check_mark:
+######
+Qual propriedade abaixo nos dá acesso a lista das classes de um HTML selecionado pela função querySelector ?
+
+:white_check_mark:
+```
+.classList
+```
+Quando selecionamos um elemento com as funções de querySelector, elas nos devolvem um objetos que tem algumas propriedades especiais, que falam sobre as características do HTML selecionado. Uma dessas propriedades é a **.classList**, que como o nome indica nos mostras **classes** que aquele HTML tem.
+Se você experimentar fazer como abaixo:
+```
+<h1 class="titulo principal azul"> Sou o titulo principal! </h1>
+```
+E no Javascript pedir para imprimir o classList deste ```<h1>```:
+```
+var titulo = document.querySelector("h1");
+console.log(titulo.classList);
+```
+
+Você verá no seu console que será exibido um array do Javascrit com todas as classes daquele ```<h1>```:
+```
+//resultado
+["titulo","principal","azul"]
+```
