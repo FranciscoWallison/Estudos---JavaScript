@@ -739,3 +739,31 @@ Você verá no seu console que será exibido um array do Javascrit com todas as 
 //resultado
 ["titulo","principal","azul"]
 ```
+
+***
+:white_check_mark:
+######
+
+Rômulo deseja que todos os H2's de sua página tenham a classe "titulo", que modifica a fonte dos H2's e deixa eles com um destaque específico.
+Qual dos códigos abaixo implementa uma solução em Javascript para que todos os <h2> da página ganhem a classe "titulo"?
+
+:white_check_mark:
+```
+var titulos = document.querySelectorAll("h2");
+
+for(var i = 0 ; i <  titulos.length ; i++){
+    var titulo = titulos[i];
+    titulo.classList.add("titulo");
+}
+```
+
+A função responsável por adicionar uma classe é a função **.add()**, que recebe como parâmetro o nome da classe que queremos adicionar!
+Só devemos lembrar de chamar está função depois de acessar a propriedade **.classList**, que é contêm as classes do HTML selecionado. Então, para resolver o problema de Rômulo, devemos utilizar o código abaixo:
+```
+var titulos = document.querySelectorAll("h2");
+
+for(var i = 0 ; i <  titulos.length ; i++){
+    var titulo = titulos[i];
+    titulo.classList.add("titulo");
+}
+```
