@@ -43,3 +43,10 @@ for (var i = 0; i < pacientes.length ; i++) {
 	    tdImc.textContent = imc.toFixed(2);
 	}
 }
+
+
+//Add event to form new user 
+var botaoAdicionar = document.querySelector("#adicionar-paciente");
+botaoAdicionar.addEventListener("click", function() {
+    console.log("Oi, cliquei no botão.");
+});
