@@ -767,8 +767,6 @@ for(var i = 0 ; i <  titulos.length ; i++){
     titulo.classList.add("titulo");
 }
 ```
-
-
 ***
 :white_check_mark:
 ######
@@ -863,3 +861,14 @@ Quando o designer solicitar uma alterção de cor do parágrafo ou dos titulos, 
 }
 ```
 Assim, nosso código fica bem organizado, com cada parte fazendo sua responsabilidade e não perdemos nosso recurso de poder alterar estilos utilizando o Javascript, só deixamos bem claro que este estilo fica no CSS e manipulamos ele através de classes!
+
+***
+:white_check_mark:
+######
+Finalizando Capitulo 3
+Neste capítulo aprendemos a lidar uma coleção de elementos do HTML e vimos:
+Como selecionar diversos elementos com a função querySelectorAll()
+Relembramos um método clássico de iteração com o for
+Vimos como manipular estilos com a propriedade .style
+Vimos que devemos utilizar camelCase quando queremos modificar uma propriedade que tenha duas palavras, como a background-color
+A boa prática de não alterar o estilo diretamente no Javascript e sim modificar as classes dos elementos com a propriedade .classList
