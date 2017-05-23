@@ -745,7 +745,7 @@ Você verá no seu console que será exibido um array do Javascrit com todas as 
 ######
 
 Rômulo deseja que todos os H2's de sua página tenham a classe "titulo", que modifica a fonte dos H2's e deixa eles com um destaque específico.
-Qual dos códigos abaixo implementa uma solução em Javascript para que todos os <h2> da página ganhem a classe "titulo"?
+Qual dos códigos abaixo implementa uma solução em Javascript para que todos os ```<h2>``` da página ganhem a classe "titulo"?
 
 :white_check_mark:
 ```
@@ -757,8 +757,8 @@ for(var i = 0 ; i <  titulos.length ; i++){
 }
 ```
 
-A função responsável por adicionar uma classe é a função **.add()**, que recebe como parâmetro o nome da classe que queremos adicionar!
-Só devemos lembrar de chamar está função depois de acessar a propriedade **.classList**, que é contêm as classes do HTML selecionado. Então, para resolver o problema de Rômulo, devemos utilizar o código abaixo:
+A função responsável por adicionar uma classe é a função **```.add()```**, que recebe como parâmetro o nome da classe que queremos adicionar!
+Só devemos lembrar de chamar está função depois de acessar a propriedade **```.classList```**, que é contêm as classes do HTML selecionado. Então, para resolver o problema de Rômulo, devemos utilizar o código abaixo:
 ```
 var titulos = document.querySelectorAll("h2");
 
@@ -767,7 +767,100 @@ for(var i = 0 ; i <  titulos.length ; i++){
     titulo.classList.add("titulo");
 }
 ```
+***
+:white_check_mark:
+######
+Por que **não** é uma boa prática alterar diretamente um estilo de um elemento utilizando a propriedades .style do Javascript ?
 
+:white_check_mark:
+
+```
+Pois é melhor alterar estilos adicionando ou removendo classes de elementos, pois assim conseguimos alterar visual com o Javascript, mas o estilo que vai ser aplicado fica no CSS, pois se um dia este estilo precisar ser modificado, só precisamos alterará-lo no CSS, em vez de todos os locais aonde ele é alterado pelo Javascript.
+```
+
+```
+Pois é importante manter a separação de código, aonde a alteração de visuais, estilo e embelezamento ficam no CSS e o Javascript fica responsável por manipular o DOM e adicionar o dinâmismo na página.
+```
+
+```
+Para melhorar a manutenibilidade do código, afinal se nos começarmos a alterar estilos dentro do Javascript, e este código se espalhar por diversas partes, e pode ser que nossas alterações de estilo fiquem inconsistentes ou difíceis de manter por estarem espalhadas em arquivos .js diferentes.
+```
+
+O Javascript é uma linguagem extremamente poderosa, sendo capaz de manipular tudo de um elemento, desde seu conteúdo de texto até mesmo suas classes e seus estilos.
+O problema é que , como diria o tio Ben, **com grande poderes vêm grandes responsabilidades**, então é preciso pensar um pouco antes de fazer certas alterações em nossos elementos com Javascript.
+
+Imagine o cenário abaixo:
+```
+<h1 class="titulo"> Um título </h1>
+
+<p class="intro"> Um paragráfo!</p>
+
+<h2 class="sub-titulo> Um outro titulo! </h2>
+
+<p class="corpo"> Um outro paragráfo!</p>
+```
+E o arquivo ```.js```:
+```
+var titulo = document.querySelector(".titulo");
+var subTitulo = document.querySelector(".subTitulo");
+var intro = document.querySelector(".intro");
+var corpo = document.querySelector(".corpo");
+// Algumas linhas de código js...
+
+titulo.style.color = "grey";
+
+// Mais algumas linhas de código js...
+subTitulo.style.color = "grey";
+
+if(titulo.textContent == "Alerta!"){
+    intro.style.color == "red";
+}
+
+// Mais algumas linhas de código js...
+
+if(subTitulo.textContent == "Aviso!"){
+    intro.style.color == "red";
+}
+```
+
+Neste código de exemplo, estamos trocando a cor dos titulos e subtitulos para cinza, e a cor dos parafrafos para vermelho caso os titulos e subtitulos sejam "Alerta!" ou "Aviso!", respectivamente.
+
+Se por acaso o designer de nosso website resolver que vermelho é uma cor muito ruim para a leitura e não está combinando com o resto do design do site, e desejar alterar a cor agora para um laranja.
+
+Agora, nós programadores, vamos ter que percorrer todo o código Javascript que pode ter centenas de linhas de código e estar em vários arquivos diferentes, e procurar por toda vez que trocamos o style de um parágrafo para uma outra cor. Imagine o trabalho que isso seria? E isto num exemplo simples! Extrapole este caso para o Facebook, se ele desejar trocar a cor do balão de notificações de vermelho para amarelo! Imagine em quantos locais não existem notificações no Facebook!
+
+Alterar um estilo diretamente pelo Javascript é muito perigoso, pois adiciona muita complexidade na hora de dar manuntenção ao código! Mas isto também não significa que não podemos alterar um estilo através do Javascript, mas só que isso deve ser feito de uma modo mais inteligente, através das classes!
+
+Quando colocamos uma classe em um elemento, estamos dizendo que ela pode ganhar um estilo, mas este estilo está definido no CSS, que é quem deve ser responsável por ditar cores e as caracteristicas visuais dos elementos, não o Javascript! Se no nosso exemplo, implementarmos o mesmo código só que pensando com classes:
+```
+titulo.classList.add("titulos");
+
+// Mais algumas linhas de código js...
+subTitulo.classList.add("titulos")
+
+if(titulo.textContent == "Alerta!"){
+    intro.classList.add("mensagem-importante");
+}
+
+// Mais algumas linhas de código js...
+
+if(subTitulo.textContent == "Aviso!"){
+    intro..classList.add("mensagem-importante");
+}
+```
+Quando o designer solicitar uma alterção de cor do parágrafo ou dos titulos, basta em buscar em meu CSS as classes correspondentes e alterá-las! Veja:
+```
+/index.css
+.titulos{
+    color: gray;
+}
+
+.mensagem-importante{
+    //alteração de apenas uma linha!
+    color: orange;
+}
+```
+Assim, nosso código fica bem organizado, com cada parte fazendo sua responsabilidade e não perdemos nosso recurso de poder alterar estilos utilizando o Javascript, só deixamos bem claro que este estilo fica no CSS e manipulamos ele através de classes!
 
 ***
 :white_check_mark:
