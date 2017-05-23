@@ -872,3 +872,32 @@ Relembramos um método clássico de iteração com o for
 Vimos como manipular estilos com a propriedade .style
 Vimos que devemos utilizar camelCase quando queremos modificar uma propriedade que tenha duas palavras, como a background-color
 A boa prática de não alterar o estilo diretamente no Javascript e sim modificar as classes dos elementos com a propriedade .classList
+
+***
+:white_check_mark:
+######
+Maria está ansiosa em descobrir a razão do seu código não ter funcionado. É um código simples, que exibe um alerta assim que um botão é clicado. Ela escreveu assim:
+
+```
+<button id="botao">clique-me</button>
+<script>
+
+    var botao = document.querySelector('#botao');
+
+    function botaoHandler() {
+
+        alert('Botão clicado');
+    }
+
+    botao.addEventListener('click', botaoHandler());
+</script>
+```
+O problema está nessa linha:
+```
+botao.addEventListener('click', botaoHandler());
+```
+
+Ao invés de associar a função ```botaoHandler``` para o evento ```click```, o que foi associado foi o retorno da função, pois ele foi passada usando parênteses. Como a função não retornada nada, o código que será executado quando o botão for clicado será nada. Para corrigir, basta removermos os parênteses:
+```
+botao.addEventListener('click', botaoHandler);
+```
