@@ -47,6 +47,7 @@ for (var i = 0; i < pacientes.length ; i++) {
 
 //Add event to form new user 
 var botaoAdicionar = document.querySelector("#adicionar-paciente");
-botaoAdicionar.addEventListener("click", function() {
+botaoAdicionar.addEventListener("click", function(e) {
+	e.preventDefault();
     console.log("Oi, cliquei no botão.");
 });
