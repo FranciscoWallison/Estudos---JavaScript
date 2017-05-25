@@ -901,3 +901,58 @@ Ao invés de associar a função ```botaoHandler``` para o evento ```click```, o
 ```
 botao.addEventListener('click', botaoHandler);
 ```
+
+***
+:white_check_mark:
+######
+Jéssica estava fazendo um site para guardar suas tarefas, estilo um to-do list. Toda tarefa era composta de um pequeno texto que ela coletava de input e que deve ser salvo no HTML. Veja como estava seu HTML e Javascript:
+
+```
+//HTML
+<ul class="afazeres">
+    <li>Ir ao médico</li>
+    <li>Trocar a senha do Wifi</li>
+    <li>Estudar Javascript</li>
+</ul>
+<form class="adicionar-tarefa">
+    <input type="text" name="tarefa">
+    <button id="botao-adicionar">Salvar</button>
+</form>
+```
+
+
+```
+// Javascript
+var form = document.querySelector('.adicionar-tarefa');
+var botao = document.querySelector('#botao-adicionar');
+botao.addEventListener("click", function(){
+    console.log(form.tarefa.value);
+    //Código para adicionar na lista de tarefas
+});
+```
+
+O seu código Javascript deveria pegar o que foi escrito no input e adicionar como um novo item na lista, porém ela já fez diversos experimentos e toda vez que ela clica no botão salvar a sua página recarrega e o que ela digitou no input some! Nem mesmo o ```console.log()``` que está logo após o evento de click está sendo exibido.
+
+Por que a página de Jéssica recarrega quando ela clica no botão de salvar e como podemos alterar o comportamento para que ela execute a função anônima que acompanha o evento ?
+```
+A página de Jéssica recarrega pois ela está clicando em um botão que está dentro de um formulário, que por padrão faz com que os dados sejam enviados e página seja recarregada. Se ela não deseja que isso aconteça, ela deve chamar a função event.preventDefault() dentro de sua função anônima, para evitar que o form recarregue a página.
+ 
+Correta!
+```
+Sabemos que o comportamento padrão de um form quando clicamos em um button ou em um ```input submit``` que esta dentro dele é enviar os dados e recarregar a página, e é por isto que a página de Jéssica sempre recarrega quando ela clica no botão.
+
+Quando queremos evitar que este comportamento aconteça, devemos fazer uma chamada a uma função do Javascript que previne o comportamento padrão de certos elementos , a ```event.preventDefault```. Então para que a página não recarregue mais, vamos adicionar dentro da função anônima chamada pelo evento de click está função:
+```
+botao.addEventListener("click", function(event){
+    event.preventDefault();
+
+    console.log(form.tarefa.value);
+    //Código para adicionar na lista de tarefas
+});
+```
+
+Repare que também colocamos como parâmetro da função o ```event```. 
+Este event é um parâmetro que está sempre presente nas funções que são executadas ao chamar um evento, mas como nem sempre o utilizamos não, nem sempre passamos ele para a nossa função. 
+Mas como ele é quem contêm a função ```.preventDefault()``` que é a que estamos interessados, precisamos passá-lo como parâmetro.
+
+Um detalhe interessante é que em certos navegadores, mesmo sem receber o event como parâmetro da função anônima, a função ```event.preventDefault()``` continua funcionando, mas isto é uma peculiaridade de certos navegadores modernos, e pode ser que em navegadores mais antigos isto não funcione. Se desejamos escrever um código seguindo as ***boas práticas do mercado*** devemos sempre colocar o event como parâmetro e nossas funções que são chamadas pelos eventos.
