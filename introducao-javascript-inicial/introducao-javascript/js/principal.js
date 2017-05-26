@@ -49,5 +49,30 @@ for (var i = 0; i < pacientes.length ; i++) {
 var botaoAdicionar = document.querySelector("#adicionar-paciente");
 botaoAdicionar.addEventListener("click", function(e) {
 	e.preventDefault();
-    console.log("Oi, cliquei no botão.");
+    var form = document.querySelector("#form-adicionar");
+    //Pegando os dados dos inputs do formulario
+    var name 	= form.name.values;
+    var peso 	= form.peso.values;
+    var altura 	= form.altura.values;
+    var gordura = form.gordura.values;
+
+    var pacienteTr = document.createElement("tr");
+
+    var nameTd = document.createElement("td");
+    var pesoTd = document.createElement("td"); 
+    var alturaTd = document.createElement("td"); 
+    var gorduraTd = document.createElement("td"); 
+    var imcTd = document.createElement("td");
+
+    nameTd.textContent 		= name;
+    pesoTd.textContent 		= peso;
+    alturaTd.textContent 	= altura;
+    gorduraTd.textContent 	= gordura;
+
+    pacienteTr.appendChild(nameTd);
+    pacienteTr.appendChild(pesoTd);
+    pacienteTr.appendChild(alturaTd);
+    pacienteTr.appendChild(gorduraTd);
+    pacienteTr.appendChild(imcTd);
+
 });
