@@ -904,7 +904,7 @@ botao.addEventListener('click', botaoHandler);
 
 ***
 :white_check_mark:
-###### Menu: Quando perde o foco me mostar o conteudo do menur 
+###### Menu: Quando perde o foco me mostrar o conteudo do menur 
 ```
 <nav class="navbar navbar-default" id="navbartop">
   <div class="container-fluid">
