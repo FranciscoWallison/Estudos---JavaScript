@@ -901,3 +901,40 @@ Ao invés de associar a função ```botaoHandler``` para o evento ```click```, o
 ```
 botao.addEventListener('click', botaoHandler);
 ```
+
+***
+:white_check_mark:
+###### Menu: Quando perde o foco me mostar o conteudo do menur 
+```
+<nav class="navbar navbar-default" id="navbartop">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+  </div>
+</nav>
+```
+###### JS:
+```
+$(function(){
+        var nav = $('#navbartop');
+        $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) { // '100' Define a altura em px
+                        nav.addClass("navbar-fixed-top");
+                } else {
+                        nav.removeClass("navbar-fixed-top");
+                }
+        });
+});
+```
