@@ -19,6 +19,8 @@
 
         $("#photo_id").change(function () {
 
+          // filename = this.files[0].name;
+
           let uploadedImg = $('#photo_id');// [0].files[0].name e [0].files.length
           let uploadedImgType = $('#photo_id').val();
           let filename = uploadedImgType.replace(/C:\\fakepath\\/i, '')
@@ -162,13 +164,17 @@
 
 
       <h1>Exemplo ded imagens</h1>
-      <img src="#" id="imgshow" alt="Flowers"> 
-    
-
+      <img src="#" id="imgshow" style="display: none;">
       <div id="interface" style="margin: 1em 0;"></div>
-    
-      <input type="file" id="photo_id" name="filename" accept="image/png, image/jpeg">
-      
+
+      <div>
+        <!-- <label for="photo_id" class="btn">Select Image</label> -->
+        <input type="file" id="photo_id" name="filename" accept="image/png, image/jpeg" 
+          style="visibility:hidden;"
+        > 
+      </div>
+
+         
 
     </div>
     </div>
