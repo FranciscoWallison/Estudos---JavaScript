@@ -42,7 +42,7 @@
 
             if(filename != "" && filename.length > 0){
                 if(uploadedImgType.match(/(?:jpeg|jpg|png|tif|tiff)$/) && (uploadedImg[0].files[0].size/1000/1000 < 50)){
-                    console.log('uploadedImgType', uploadedImgType);
+                    console.log('uploadedImgType', this);
                     if (this.files && this.files[0]) {
                       var reader = new FileReader();
                       reader.onload = function (e) {
