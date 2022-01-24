@@ -4,153 +4,105 @@
   <head>
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" /> 
     <title>Jcrop &raquo; Tutorials &raquo; Animations / Transitions</title>
-    <script src="./js/jquery.min.js" type="text/javascript"></script>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- <script src="./js/jquery.min.js" type="text/javascript"></script> -->
     <script src="./js/jquery.Jcrop.js" type="text/javascript"></script>
     <script src="./js/jquery.color.js" type="text/javascript"></script>
+    
     <link rel="stylesheet" href="./css/jquery.Jcrop.css" type="text/css" />
     <link rel="stylesheet" href="./css/jquery.Jcrop.extras.css" type="text/css" />
     <link rel="stylesheet" href="demo_files/demos.css" type="text/css" />
-
+   
     <script type="text/javascript">
 
       jQuery(function($){
+        $(document).ready(function(){
+          jQuery.browser = {};
+          (function () {
+            jQuery.browser.msie = false;
+            jQuery.browser.version = 0;
+            if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+              jQuery.browser.msie = true;
+              jQuery.browser.version = RegExp.$1;
+            }
+          })();
 
+          $("#photo_id").change(function () {
 
+            // filename = this.files[0].name;
 
-        $("#photo_id").change(function () {
+            let uploadedImg = $('#photo_id');// [0].files[0].name e [0].files.length
+            let uploadedImgType = $('#photo_id').val();
+            let filename = uploadedImgType.replace(/C:\\fakepath\\/i, '')
 
-          // filename = this.files[0].name;
+            if(filename != "" && filename.length > 0){
+                if(uploadedImgType.match(/(?:jpeg|jpg|png|tif|tiff)$/) && (uploadedImg[0].files[0].size/1000/1000 < 50)){
+                    console.log('uploadedImgType', uploadedImgType);
+                    if (this.files && this.files[0]) {
+                      var reader = new FileReader();
+                      reader.onload = function (e) {
+                        var jcrop_api;
 
-          let uploadedImg = $('#photo_id');// [0].files[0].name e [0].files.length
-          let uploadedImgType = $('#photo_id').val();
-          let filename = uploadedImgType.replace(/C:\\fakepath\\/i, '')
+                        $('#interface').show();
 
-          if(filename != "" && filename.length > 0){
-              if(uploadedImgType.match(/(?:jpeg|jpg|png|tif|tiff)$/) && (uploadedImg[0].files[0].size/1000/1000 < 50)){
-                  console.log('uploadedImgType', uploadedImgType);
-                  if (this.files && this.files[0]) {
-                    var reader = new FileReader();
-                    reader.onload = function (e) {
-                      var jcrop_api;
+                        $('#imgshow').attr('src', e.target.result);
+                      }
+                      reader.readAsDataURL(this.files[0]);
+                      $("#imgshow").show();
 
-                      // $('#imgshow').Jcrop({
-                      //   bgFade:     true,
-                      //   bgOpacity: .3,
-                      //   setSelect: [ 20,20,580,380 ] // dimensão da imagem
-                      // },function(){
-                      //   jcrop_api = this;
-                      // });
+                      setTimeout(async () => {
+                        const img =  document.getElementById('imgshow');
+                        getImgSize(img).then(size => {
 
-                      // // Define page sections
-                      // var sections = {
-                      //   bgo_buttons: 'Change bgOpacity',
-                      //   bgc_buttons: 'Change bgColor'
-                      // };
-                      // // Define bgOpacity buttons
-                      // var bgo = {
-                      //   Low: .2,
-                      //   Mid: .5,
-                      //   High: .8,
-                      //   Full: 1
-                      // };
-                      // // Define bgColor buttons
-                      // var bgc = {
-                      //   Red: '#900',
-                      //   Blue: '#4BB6F0',
-                      //   Yellow: '#F0B207',
-                      //   Green: '#46B81C',
-                      //   White: 'white',
-                      //   Black: 'black'
-                      // };
-                      // // Create fieldset targets for buttons
-                      // for(i in sections)
-                      //   insertSection(i,sections[i]);
-                      // // Create bgOpacity buttons
-                      // for(i in bgo) {
-                      //   $('#bgo_buttons').append(
-                      //     $('<button />').append(i).click(setoptHandler('bgOpacity',bgo[i])), ' '
-                      //   );
-                      // }
-                      // // Create bgColor buttons
-                      // for(i in bgc) {
-                      //   $('#bgc_buttons').append(
-                      //     $('<button />').append(i).css({
-                      //       backgroundColor: bgc[i],
-                      //       color: ((i == 'Black') || (i == 'Red'))?'white':'black'
-                      //     }).click(setoptHandler('bgColor',bgc[i])), ' '
-                      //   );
-                      // }
-                      // // Function to insert named sections into interface
-                      // function insertSection(k,v) {
-                      //   $('#interface').append(
-                      //     $('<fieldset></fieldset>').attr('id',k).append(
-                      //       $('<legend></legend>').append(v)
-                      //     )
-                      //   );
-                      // };
-                      // // Handler for option-setting buttons
-                      // function setoptHandler(k,v) {
-                      //   return function() {
-                      //     var opt = { };
-                      //     opt[k] = v;
-                      //     jcrop_api.setOptions(opt);
-                      //     return false;
-                      //   };
-                      // };
-                      // // Handler for animation buttons
-                      // function animHandler(v) {
-                      //   return function() {
-                      //     jcrop_api.animateTo(v);
-                      //     return false;
-                      //   };
-                      // };
+                          $('#imgshow').Jcrop({
+                            bgFade:     true,
+                            bgOpacity: .3,
+                            setSelect: [ 0, 0, size.width, size.height ] 
+                            // setSelect: [ size.height / 20 ,size.height / 20 ,size.width - 22 ,size.width - 222 ] // dimensão da imagem
+                          },function(){
+                            jcrop_api = this;
+                          });
 
-                      $('#interface').show();
+                          var newUrl = $('#imgshow').attr('src')
+                          var jcrop_api = $('#imgshow').data("Jcrop");
+                          jcrop_api.setImage(newUrl , function() {
+                            jcrop_api = this;
+                            var bounds = this.getBounds();
+                          });
 
-                      $('#imgshow').attr('src', e.target.result);
-                    }
-                    reader.readAsDataURL(this.files[0]);
-                    $("#imgshow").show();
-
-                    setTimeout(async () => {
-                      const img =  document.getElementById('imgshow');
-                      getImgSize(img).then(size => {
-
-                        $('#imgshow').Jcrop({
-                          bgFade:     true,
-                          bgOpacity: .3,
-                          setSelect: [ 0, 0, size.width, size.height ] 
-                          // setSelect: [ size.height / 20 ,size.height / 20 ,size.width - 22 ,size.width - 222 ] // dimensão da imagem
-                        },function(){
-                          jcrop_api = this;
+                          $('#imgshow').hide();
+                          $("#myModal").modal();
+                          $('#modal-img').css({"width": size.width+"px", "height": size.height+"px"});
                         });
 
-                        console.log(size.width - 22, size.width - 222 , size.height / 20 , size.height / 20, size  )
-                      });
+                      }, 80)
+                    }
+                }else{
+                  console.log('ERRO-uploadedImgType-ERRO');
+                }
+            }
+          });
 
-                    }, 80)
-                  }
-              }else{
-                console.log('ERRO-uploadedImgType-ERRO');
+          function getImgSize(image) {
+            const newImg = new Image();
+            return new Promise((res, rej) => {
+              newImg.onload = function() {
+                const height = newImg.height;
+                const width = newImg.width;
+                res({
+                  width: newImg.width,
+                  height: newImg.height
+                });
               }
+              newImg.src = image.src;
+            });
           }
         });
-
-        function getImgSize(image) {
-          const newImg = new Image();
-          return new Promise((res, rej) => {
-            newImg.onload = function() {
-              const height = newImg.height;
-              const width = newImg.width;
-              res({
-                width: newImg.width,
-                height: newImg.height
-              });
-            }
-            newImg.src = image.src;
-          });
-        }
-
       });
 
     </script>
@@ -159,25 +111,45 @@
 
   <body>
     <div id="outer">
-    <div class="jcExample">
-    <div class="article">
+      <div class="jcExample">
+        <div class="article">
+          <h1>Exemplo ded imagens 1</h1>
 
-
-      <h1>Exemplo ded imagens</h1>
-      <img src="#" id="imgshow" style="display: none;">
-      <div id="interface" style="margin: 1em 0;"></div>
-
-      <div>
-        <!-- <label for="photo_id" class="btn">Select Image</label> -->
-        <input type="file" id="photo_id" name="filename" accept="image/png, image/jpeg" 
-          style="visibility:hidden;"
-        > 
+        
+          <div id="interface" style="margin: 1em 0;"></div>
+          <div>
+            <!-- <label for="photo_id" class="btn">Select Image</label> -->
+            <input type="file" id="photo_id" name="filename" accept="image/png, image/jpeg" 
+             
+            > 
+          </div>
+        </div>
       </div>
 
-         
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog" id="modal-img">              
+          <!-- Modal content-->
+          <div class="modal-content">
+            <!-- <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+              <p>Some text in the modal.</p>
+            </div> -->
 
-    </div>
-    </div>
+            <img src="#" id="imgshow" style="display: none;">
+            
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Salvar</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
     </div>
   </body>
 </html>
