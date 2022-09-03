@@ -22,7 +22,7 @@ Quando o navegador passar pela tag abaixo ele vai interprar o texto "alert("Olá
     </body>
 </hmtl>
 ```
-######Será exibido apenas o texto do ```<h1>``` e um erro no console do desenvolvedor. :white_check_mark:
+###### Será exibido apenas o texto do ```<h1>``` e um erro no console do desenvolvedor. :white_check_mark:
 Sabemos que o navegador vai lendo de cima para baixo o contéudo do HTML e interpretando o que ele lê de acordo com as tags da página. Neste caso, ele irá ler a tag ``` <h1> ``` e irá exibir o seu contéudo com letras grandes, característico de um ``` <h1>``` .
 Porém, ao ler a tag ``` <script> ``` o navegador entende que todo texto que está dentro da tag ```<script> ```deve ser lido como um Javascript, logo ele vai tentar interpretar a frase "Olá Mundo" como se fosse uma função Javascript válida, o que sabemos que não é, e então ele exibirá um erro de Unexpected Identifier, que nada mais é o que ele dizendo atráves do console de desenvolvedor que ele não entende "Olá mundo" como uma de suas funções.
 
