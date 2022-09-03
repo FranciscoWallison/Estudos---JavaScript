@@ -127,7 +127,7 @@ Qual das opções abaixo acessa corretamente a partir de trPaciente o peso e a a
 Com JavaScript podemos obter um elemento pai, no caso trPaciente e dele realizar novas consultas para obter elementos filhos, como foi o caso das TD's de peso e altura.
 
 ***
-:mortar_board:  ##Mariana é dona de um restaurante que troca os pratos semanalmente. Os pratos são exibidos para seus clientes em seu site como uma tabela, como a abaixo:
+## :mortar_board:  Mariana é dona de um restaurante que troca os pratos semanalmente. Os pratos são exibidos para seus clientes em seu site como uma tabela, como a abaixo:
 ```
 <table>
 <thead>
