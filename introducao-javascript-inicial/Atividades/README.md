@@ -9,7 +9,7 @@ alert("Olá mundo");
 Quando o navegador passar pela tag abaixo ele vai interprar o texto "alert("Olá mundo");" e irá executar a função alert(), que é responsável por exibir uma pop up com a mensagem Olá mundo.
 
 ***
-:mortar_board: ##Ao abrir o HTML abaixo em um navegador, o que irá acontecer ? 
+## :mortar_board: Ao abrir o HTML abaixo em um navegador, o que irá acontecer ? 
 ```
 <html>
     <head>
