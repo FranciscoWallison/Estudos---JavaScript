@@ -1,4 +1,4 @@
-:mortar_board: ##Sabemos que o navegador entende apenas HTML e que se colocarmos scripts diretamente no corpo da mensagem ele será interpretado como texto. Como resolvemos isso?
+## :mortar_board: Sabemos que o navegador entende apenas HTML e que se colocarmos scripts diretamente no corpo da mensagem ele será interpretado como texto. Como resolvemos isso?
 A tag ``` <script> ``` é responsável por nos ajudar a resolver este problema. Tudo que declaramos dentro da tag ``` <script>  ``` é interpretado como Javascript quando o navegador passar por ali.
 No caso abaixo:
 ```
@@ -32,10 +32,10 @@ Se desejamos que uma mensagem seja exibida no console, devemos sempre chamar a f
 
 ***
 :mortar_board: ##Marque as alternativas abaixo que contêm características ou funcionalidades do console de desenvolvedor do navegador:
-######Executar funções Javascript diretamente no console. :white_check_mark:
-######Exibir erros de códigos Javascript carregados pelo navegador. :white_check_mark:
-######Pode ser aberto com a tecla de atalho CTRL + SHIFT + J no Windows/Linux e CMD + ALT + J no Mac, :white_check_mark:
-######Ver os resultados de funções que imprimem no console, como a console.log(). :white_check_mark:
+###### Executar funções Javascript diretamente no console. :white_check_mark:
+###### Exibir erros de códigos Javascript carregados pelo navegador. :white_check_mark:
+###### Pode ser aberto com a tecla de atalho CTRL + SHIFT + J no Windows/Linux e CMD + ALT + J no Mac, :white_check_mark:
+###### Ver os resultados de funções que imprimem no console, como a console.log(). :white_check_mark:
 ```
 O console do desenvolvedor é uma ferramenta muito poderosa e versátil para o desenvolvedor Javascript. Com ele conseguimos rapidamente ser notificados de possíveis erros em nosso código, podemos executar funções, observar a saída de algumas funções e executar pequenos testes das funcionalidades do Javascript de modo rápido.
 
@@ -66,7 +66,7 @@ e logo em seguida desejamos exibir uma pop-up, logo é necessário utilizar a fu
 
 ***
 :mortar_board: ##O que contêm a variável ```document``` do Javacript ?
-######Ela é a representação do DOM ou Document Object Model, que é a representação da nossa página HTML para o navegador, que é utilizada pelo Javascript para manipular a página.:white_check_mark:
+###### Ela é a representação do DOM ou Document Object Model, que é a representação da nossa página HTML para o navegador, que é utilizada pelo Javascript para manipular a página.:white_check_mark:
 O document é uma variável muito importante do Javascript. Ela contêm o DOM ou Document Object Model, que é como o navegador enxerga o HTML utilizado por ele para renderizar a página.
 O navegador, ao ler o seu arquivo HTML, cria uma cópia em memória daquele HTML e a partir dessa cópia ele vai desenhando a sua página, colocando as tags e aplicando os estilos. Esta cópia é o que chamamos de DOM uma representação em memória do HTML do seu arquivo, que o navegador usa para desenhar a página, e a variável document é quem contêm o DOM.
 
@@ -76,7 +76,7 @@ Outra caracteristica interessante, é que como manipulamos o DOM , quando trocam
 
 ***
 :mortar_board:  ##Sabemos que o document contêm a representação de todo o HTML da nossa página, porém na maioria dos casos estamos interessados em apenas uma parte do HTML e não em ele todo. Qual função podemos utilizar na variável document para especificar que queremos trazer apenas uma parte do HTML ?
-######document.querySelector();:white_check_mark:
+###### document.querySelector();:white_check_mark:
 
 Quando desejamos pegar apenas parte do HTML, devemos utilizar a função querySelector(). A função querySelector faz a busca através de seletores CSS para trazer o HTML que você está interessado. Por exemplo, no caso abaixo:
 ```<h1 class="titulo"> ```Meu primeiro site```</h1>```
@@ -121,8 +121,8 @@ var trPaciente = document.querySelector('#primeiro-paciente');
 ```
 
 Qual das opções abaixo acessa corretamente a partir de trPaciente o peso e a altura?
-######var tdPeso = trPaciente.querySelector('.info-peso');:white_check_mark:
-######var tdAltura = trPaciente.querySelector('.info-altura');:white_check_mark:
+###### var tdPeso = trPaciente.querySelector('.info-peso');:white_check_mark:
+###### var tdAltura = trPaciente.querySelector('.info-altura');:white_check_mark:
 
 Com JavaScript podemos obter um elemento pai, no caso trPaciente e dele realizar novas consultas para obter elementos filhos, como foi o caso das TD's de peso e altura.
 
@@ -363,8 +363,8 @@ Com o tempo os funcionários observaram que a validação estava falha, pois pes
 
 Com base nos seus conhecimentos de Javascript e de lógica de programação, marque todas as opções abaixo que indicam quais funcionários tinham acesso as informações do setor de TI.
 
-######Todos os funcionários do setor de TI.:white_check_mark:
-######Qualquer funcionário que fosse gerente no banco. :white_check_mark:
+###### Todos os funcionários do setor de TI.:white_check_mark:
+###### Qualquer funcionário que fosse gerente no banco. :white_check_mark:
 
 Como a condição lógica testada é um OU ( representado pelas barrinhas || no Javascript ), caso uma condição OU a outra fosse atendida, o acesso as informações seriam liberadas. Basta apenas cumprir uma delas que o acesso seria permitido.
 A primeira condição era ``` setorTI == true```  ou seja , se o funcionário fosse do setor de TI ele já teria o acesso, mesmo não sendo gerente.
@@ -649,8 +649,7 @@ for( var i=0 ; i < produtos.length ; i++){
 
 ***
 :white_check_mark:
-######
-Qual dos códigos abaixo altera a cor da letra do paragrafo abaixo para a cor azul ?
+###### Qual dos códigos abaixo altera a cor da letra do paragrafo abaixo para a cor azul ?
 
 ```
 <p id="latim"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
@@ -875,8 +874,7 @@ A boa prática de não alterar o estilo diretamente no Javascript e sim modifica
 
 ***
 :white_check_mark:
-######
-Maria está ansiosa em descobrir a razão do seu código não ter funcionado. É um código simples, que exibe um alerta assim que um botão é clicado. Ela escreveu assim:
+###### Maria está ansiosa em descobrir a razão do seu código não ter funcionado. É um código simples, que exibe um alerta assim que um botão é clicado. Ela escreveu assim:
 
 ```
 <button id="botao">clique-me</button>
