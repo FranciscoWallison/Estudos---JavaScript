@@ -31,7 +31,7 @@ Saber identificar e interpretar os erros do console é uma habilidade de todo bo
 Se desejamos que uma mensagem seja exibida no console, devemos sempre chamar a função ```console.log()```, que é a função que recebe como parâmetro o contéudo da mensagem que queremos exibir no console.
 
 ***
-:mortar_board: ##Marque as alternativas abaixo que contêm características ou funcionalidades do console de desenvolvedor do navegador:
+## :mortar_board:  Marque as alternativas abaixo que contêm características ou funcionalidades do console de desenvolvedor do navegador:
 ###### Executar funções Javascript diretamente no console. :white_check_mark:
 ###### Exibir erros de códigos Javascript carregados pelo navegador. :white_check_mark:
 ###### Pode ser aberto com a tecla de atalho CTRL + SHIFT + J no Windows/Linux e CMD + ALT + J no Mac, :white_check_mark:
