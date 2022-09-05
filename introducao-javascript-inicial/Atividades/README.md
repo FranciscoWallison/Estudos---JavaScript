@@ -51,7 +51,7 @@ Sabemos que é importante fazer a separação de mundos HTML e Javascript, por i
 ```
 
 ***
-:mortar_board: ## Qual opção abaixo substitui o hasheado (XXXX) por um código que exibe uma pop up com a mensagem bem vindo ?
+## :mortar_board: Qual opção abaixo substitui o hasheado (XXXX) por um código que exibe uma pop up com a mensagem bem vindo ?
 ```
 XXXX mensagem = "Seja bem vindo ao meu site!"
 
@@ -65,7 +65,7 @@ e logo em seguida desejamos exibir uma pop-up, logo é necessário utilizar a fu
 ``` alert(mensagem); ```
 
 ***
-:mortar_board: ## O que contêm a variável ```document``` do Javacript ?
+## :mortar_board: O que contêm a variável ```document``` do Javacript ?
 ###### Ela é a representação do DOM ou Document Object Model, que é a representação da nossa página HTML para o navegador, que é utilizada pelo Javascript para manipular a página.:white_check_mark:
 O document é uma variável muito importante do Javascript. Ela contêm o DOM ou Document Object Model, que é como o navegador enxerga o HTML utilizado por ele para renderizar a página.
 O navegador, ao ler o seu arquivo HTML, cria uma cópia em memória daquele HTML e a partir dessa cópia ele vai desenhando a sua página, colocando as tags e aplicando os estilos. Esta cópia é o que chamamos de DOM uma representação em memória do HTML do seu arquivo, que o navegador usa para desenhar a página, e a variável document é quem contêm o DOM.
