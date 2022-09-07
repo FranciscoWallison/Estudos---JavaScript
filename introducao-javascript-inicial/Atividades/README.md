@@ -193,7 +193,7 @@ console.log(acompanhamento);
 ```
 
 ***
-:mortar_board:  ##Aprendemos que o cálculo do índice de massa corporal (IMC) é feito dividindo o nosso peso pela altura vezes a altura, o que pode ser representado pela seguinte fórmula na linguagem JavaScript:
+## :mortar_board: Aprendemos que o cálculo do índice de massa corporal (IMC) é feito dividindo o nosso peso pela altura vezes a altura, o que pode ser representado pela seguinte fórmula na linguagem JavaScript:
 
 ```
 alert(78 / (1.71 * 1.71));
@@ -212,7 +212,7 @@ alert(imc);
 Veja que uma simples instrução quando desmembrada em variáveis necessita da atenção do desenvolvedor.
 
 ***
-:mortar_board:  ##Rogério era um programador da empresa Sentec Enterprises, e ele ficou responsável de fazer o site que exibe os indicadores de sua empresa, para mostrar para os clientes e possíveis investidores como a empresa havia desempenhado nos últimos anos.
+## :mortar_board: Rogério era um programador da empresa Sentec Enterprises, e ele ficou responsável de fazer o site que exibe os indicadores de sua empresa, para mostrar para os clientes e possíveis investidores como a empresa havia desempenhado nos últimos anos.
 
 O indicador é calculado como a imagem abaixo:
 ```
