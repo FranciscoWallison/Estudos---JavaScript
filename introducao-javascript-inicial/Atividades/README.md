@@ -89,7 +89,7 @@ E utilizando um seletor CSS de classe, ficaria assim:
 Neste caso, ambas as funções retornaria o h1. Ter domínio dos seletores CSS é importante se você deseja trabalhar bem com o Javascript!
 
 ***
-:mortar_board:  ##Temos o seguinte fragmento HTML:
+## :mortar_board: Temos o seguinte fragmento HTML:
 ```
 
 <table>
