@@ -259,7 +259,7 @@ taxa = vendas / (clientesAbordados *  mediaTentativasPorCliente);
 Faça o teste em seu navegador e veja a diferença que um simples parêntese pode fazer!
 
 ***
-:mortar_board:  ##Aprendemos a obter um elemento do Mundo HTML e trazê-lo para o mundo JavaScript para podermos acessa-lo aplicando as mais diversas lógicas de programação.
+## :mortar_board: Aprendemos a obter um elemento do Mundo HTML e trazê-lo para o mundo JavaScript para podermos acessa-lo aplicando as mais diversas lógicas de programação.
 Por exemplo, vamos revisar o código que extrai de uma página o peso e a altura para calcular o IMC. Primeiro, temos o um fragmento do HTML
 ```
 <table>
