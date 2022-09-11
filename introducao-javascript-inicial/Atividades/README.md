@@ -233,7 +233,7 @@ O valor que ele esperava obter era ```0.1```, afinal a conta é simples, basta d
 
 Qual das afirmativas abaixo explica o resultado estranho que Rogério está obtendo ?
 
-######O Rogério não está levando em conta a ordem dos operadores em Javascript. Se ele não disser que a multiplicação deve ser feita primeiro, envolvendo-a com parênteses, ele sempre vai obter o resultado errado, pois o Javascript vai ler sua conta da esquerda para a direita, e vai resolver primeiro o bloco vendas / clientesAbordados e depois multiplicar por mediaTentativasPorCliente.:white_check_mark:
+###### O Rogério não está levando em conta a ordem dos operadores em Javascript. Se ele não disser que a multiplicação deve ser feita primeiro, envolvendo-a com parênteses, ele sempre vai obter o resultado errado, pois o Javascript vai ler sua conta da esquerda para a direita, e vai resolver primeiro o bloco vendas / clientesAbordados e depois multiplicar por mediaTentativasPorCliente.:white_check_mark:
 
 Assim como nós calculávamos o IMC, Rogério cometeu um simples erro que estragou o resultado de sua conta. Ele não levou em conta os parênteses e por isso o Javascript executou sua conta de modo errado, veja:
 ```
