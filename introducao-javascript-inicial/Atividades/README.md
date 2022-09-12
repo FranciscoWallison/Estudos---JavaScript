@@ -349,7 +349,7 @@ if(pesoEhValido && alturaEhValida) {
 Veja que já somos capazes de capturar informações na página e ainda executar um monte de críticas para verificar a integridade dos dados antes de executamos nossa lógica com eles.
 
 ***
-:mortar_board:  ##No sistema de RH do banco Finanção, as informações dos funcionários de uma determinada área eram apenas acessíveis aos gerentes daquela área Um código Javascript que verificava se um funcionário do setor de TI poderia ou não ter acesso aos dados funcionava como abaixo:
+## :mortar_board: No sistema de RH do banco Finanção, as informações dos funcionários de uma determinada área eram apenas acessíveis aos gerentes daquela área Um código Javascript que verificava se um funcionário do setor de TI poderia ou não ter acesso aos dados funcionava como abaixo:
 ``` 
 var setorTI = true;
 var gerente = false;
