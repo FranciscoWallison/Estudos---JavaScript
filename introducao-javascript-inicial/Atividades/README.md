@@ -374,7 +374,7 @@ A segunda condição era ``` gerente == true```  ou seja, se o funcionário foss
 No próximo exercício faremos a correção deste código para que ele dê acesso apenas aos gerentes do setor de TI.
 
 ***
-:mortar_board:  ##Vimos que o banco Finanção está com uma falha na hora de verificar quem tem acesso a quais informações , qual alteração você faria no código abaixo para que apenas gerentes que são do departamento de TI tenham acesso ao dados de seus funcionários ?
+## :mortar_board: Vimos que o banco Finanção está com uma falha na hora de verificar quem tem acesso a quais informações , qual alteração você faria no código abaixo para que apenas gerentes que são do departamento de TI tenham acesso ao dados de seus funcionários ?
 ``` 
 var setorTI = true;
 var gerente = false;
