@@ -468,7 +468,7 @@ tdImc.textContent = imc;
 Agora, ao recarregar a página, você verá que o IMC do primeiro paciente.
 
 ***
-:mortar_board:  ##Já estamos conseguindo calcular o IMC, porém falta validar os dados que vem da tabela. Vamos lá:
+## :mortar_board: Já estamos conseguindo calcular o IMC, porém falta validar os dados que vem da tabela. Vamos lá:
 1- O primeiro passo é fazer uma verificação do peso, vamos estabelecer que um peso é inválido se ele for menor ou igual a 0 quilos **OU** maior que 1000 quilos. Para isto, vamos utilizar um if para checar o peso, e a condição lógica de **OU** (||):
 ```
 if(peso <= 0 || peso > 1000){
