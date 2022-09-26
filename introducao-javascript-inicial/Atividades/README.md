@@ -566,7 +566,7 @@ if(pesoEhValido && alturaEhValida){
 ```
 
 ***
-:mortar_board:  ##Jéssica criou um aplicativo de finanças para ter um melhor controle de seus gastos, visto que ela estava gastando muito com eletrônicos.
+## :mortar_board: Jéssica criou um aplicativo de finanças para ter um melhor controle de seus gastos, visto que ela estava gastando muito com eletrônicos.
 Ela queria ver qual a porcentagem de sua renda era destinada a cada categoria de gastos e para isto ela usava um simples cálculo:
 
 ```
