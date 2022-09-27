@@ -600,7 +600,7 @@ porcentagemCategoria.toFixed(1);
 O número passado entre parêntenses deve ser o número de casas decimais para formatar o ```porcentagemCategoria```.
 
 ***
-:mortar_board:  ##João está montando um script em Javascript que deve pegar todos os nomes dos produtos de um e-commerce.
+## :mortar_board: João está montando um script em Javascript que deve pegar todos os nomes dos produtos de um e-commerce.
 
 O HTML da lista é como o abaixo:
 
