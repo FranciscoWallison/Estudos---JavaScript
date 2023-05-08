@@ -1,38 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## iniciando firebase
+````
+npm install firebase
+````
+## iniciando variavei de ambiente
+````
+NEXT_PUBLIC_FIREBASE_API_KEY=<sua_api_key>
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=<seu_auth_domain>
+NEXT_PUBLIC_FIREBASE_DATABASE_URL=<sua_url_do_database>
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=<seu_id_do_projeto>
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=<seu_bucket_de_armazenamento>
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=<seu_id_do_sender>
+NEXT_PUBLIC_FIREBASE_APP_ID=<seu_app_id>
+````
 
-## Getting Started
+##  'firebase.js' Arquivo com as configurações do projeto
+````
+import firebase from 'firebase/app';
+import 'firebase/database';
 
-First, run the development server:
+if (!firebase.apps.length) {
+  firebase.initializeApp({
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+    databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
+    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  });
+}
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+export default firebase;
+````
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Chamando o projeto para usar o banco não relacional 
+````
+import { useState } from 'react';
+import firebase from '../lib/firebase';
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+export default function Home() {
+  const [value, setValue] = useState('');
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+  // Lê o valor da chave 'message' no banco de dados
+  const getValue = async () => {
+    const snapshot = await firebase.database().ref('message').once('value');
+    setValue(snapshot.val());
+  };
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+  // Atualiza o valor da chave 'message' no banco de dados
+  const updateValue = async (e) => {
+    e.preventDefault();
+    await firebase.database().ref('message').set(value);
+  };
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  return (
+    <div>
+      <h1>Valor atual: {value}</h1>
+      <button onClick={getValue}>Obter valor</button>
+      <form onSubmit={updateValue}>
+        <input
+          type="text"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
+        <button type="submit">Atualizar valor</button>
+      </form>
+    </div>
+  );
+}
+````
