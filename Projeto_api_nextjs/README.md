@@ -1,3 +1,6 @@
+## variaveis de ambiente na vercel
+[VERCEL](https://vercel.com/docs/concepts/projects/environment-variables)
+
 ## iniciando firebase
 ````
 npm install firebase
