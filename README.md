@@ -28,8 +28,9 @@ introducao-javascript-inicial
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
+    display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; /* Centralizar verticalmente */
 }
 
 .modal-content {
