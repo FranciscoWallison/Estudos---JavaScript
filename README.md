@@ -7,14 +7,16 @@ next api
 introducao-javascript-inicial
 
 ````
-    <div id="myModal" class="modal">
-        <div class="modal-content">
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <div class="header">
             <span class="close">&times;</span>
             <h2>Título do Modal</h2>
-            <p>Texto no corpo do modal.</p>
-            <button id="closeModalBtn">Fechar Modal</button>
         </div>
+        <p>Texto no corpo do modal.</p>
+        <button id="closeModalBtn">Fechar Modal</button>
     </div>
+</div>
 ````
 
 ````
@@ -41,8 +43,17 @@ introducao-javascript-inicial
     text-align: center;
 }
 
+/* Estilos para o cabeçalho (título e botão de fechar) */
+.header {
+    background-color: #007bff; /* Cor do cabeçalho */
+    color: white; /* Cor do texto no cabeçalho */
+    padding: 10px;
+    border-radius: 5px 5px 0 0; /* Borda arredondada no topo */
+}
+
+
 /* Estilos para o botão de fechar (x) */
-.close {
+.header .close {
     position: absolute;
     top: 10px;
     right: 15px;
@@ -50,7 +61,6 @@ introducao-javascript-inicial
     font-weight: bold;
     cursor: pointer;
 }
-
 /* Estilos para o botão "Fechar Modal" no rodapé */
 #closeModalBtn {
     margin-top: 20px;
