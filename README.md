@@ -5,7 +5,6 @@ next api
 
 ## atividade e projetos com ecmascript 
 introducao-javascript-inicial
-
 ````
 <div id="myModal" class="modal">
     <div class="modal-content">
@@ -18,7 +17,6 @@ introducao-javascript-inicial
     </div>
 </div>
 ````
-
 ````
 /* Estilos para o modal */
 .modal {
