@@ -1,3 +1,13 @@
+Todas as atividades que realizamos no dia a dia envolvem, de alguma forma, uma sequência lógica.
+
+A ideia é aprender a interpretar cada processo de forma sequencial, seguindo instruções que, quando bem executadas, resolvem um problema ou completam uma tarefa.
+
+Podemos pensar em diversas situações em que isso acontece, como: fazer um bolo, cozinhar arroz, lavar o banheiro ou se preparar para ir à escola ou ao trabalho.
+```
+
+```
+
+
 // 🟩 1. Entrada de dados: peça ao usuário que digite o nome dele
 // Dica: use prompt() para capturar a entrada do usuário
 
