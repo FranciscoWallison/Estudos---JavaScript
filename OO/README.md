@@ -10,6 +10,49 @@ Claro! Vamos montar um exemplo bem simples de **orientação a objetos (OO)** em
 ### 🐶 Exemplo: Classe `Cachorro`
 
 ```js
+class Animal {
+  constructor(nome) {
+    this.nome = nome;
+  }
+
+  falar() {
+    console.log(`${this.nome} está fazendo um som...`);
+  }
+}
+```
+
+
+```js
+class Cachorro extends Animal {
+  constructor(nome, raca) {
+    super(nome); // chama o construtor da classe Animal
+    this.raca = raca;
+  }
+
+  // Sobrescreve método
+  falar() {
+    console.log(`${this.nome} (da raça ${this.raca}) diz: Au au!`);
+  }
+
+  // Método específico da subclasse
+  abanarRabo() {
+    console.log(`${this.nome} está abanando o rabo.`);
+  }
+}
+
+```
+
+```js
+const animal = new Animal("Bicho");
+animal.falar(); // Bicho está fazendo um som...
+
+const rex = new Cachorro("Rex", "Labrador");
+rex.falar();        // Rex (da raça Labrador) diz: Au au!
+rex.abanarRabo();   // Rex está abanando o rabo.
+```
+
+
+```js
 class Cachorro {
   // Atributo privado com #
   #idade;
